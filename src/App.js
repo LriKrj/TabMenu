@@ -22,6 +22,11 @@ function App() {
     setTodo({ ...todo, [event.target.name]: event.target.value });
   };
 
+  const ChangeDate = (day) => {
+    setTodo({ ...todo, date : day })
+  };
+  
+
   const columns = [
     { field: "desc", sortable: true, filter: true },
     { field: "date", sortable: true, filter: true },
@@ -41,7 +46,7 @@ function App() {
             label="Date"
             name="date"
             value={todo.date}
-            onChange={(time) => setTodo({ ...todo, date : time })}
+            onChange={ChangeDate}
           />
         </MuiPickersUtilsProvider>
         <TextField
